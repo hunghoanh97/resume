@@ -12,7 +12,7 @@ const personalInfo = {
   email: "hoanhquanghung@gmail.com", 
   phone: "+84 123 456 789",
   location: "Hanoi, Vietnam",
-  avatar: "/avatar.png"
+  avatar: `${process.env.PUBLIC_URL}/Avatar.png`
 };
 
 const experiences = [
