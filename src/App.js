@@ -1,19 +1,40 @@
 import React from 'react';
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-import Header from './components/Header';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Skills from './components/Skills';
+import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
 
 const personalInfo = {
   name: "HOANH QUANG HUNG",
   title: "Full-Stack Developer",
-  summary: "• Dedicated Back-end Developer with over 5 years of experience in .NET Core development.\n• 1+ year of experience in sub-lead position\n• Devops basic knowledge about Docker, Linux, Cloud, CI/CD\n• Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required\n• Excellent teamwork skills and sociable personality\n• Intermediate English level(TOEIC ~680-730 in IIG test), N4 Japanese",
-  email: "hoanhquanghung@gmail.com", 
+  email: "hoanhquanghung@gmail.com",
   phone: "+84 123 456 789",
   location: "Hanoi, Vietnam",
-  avatar: `${process.env.PUBLIC_URL}/Avatar.png`
+  avatar: `${process.env.PUBLIC_URL}/Avatar.png`,
+  skills: [
+    "SQL Database Management",
+    "Linux/Unix Command line",
+    "Python",
+    "C++",
+    "JAVA",
+    ".NET Core",
+    "React",
+    "Node.js"
+  ],
+  languages: [
+    { name: "English", level: "Intermediate (TOEIC ~680-730)" },
+    { name: "Japanese", level: "N4" }
+  ],
+  hobbies: [
+    "Reading",
+    "Swimming",
+    "Playing Guitar"
+  ]
 };
+
+const profile = `Dedicated Back-end Developer with over 5 years of experience in .NET Core development. 
+1+ year of experience in sub-lead position with strong knowledge in DevOps practices including Docker, Linux, Cloud, and CI/CD. 
+Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required. 
+Excellent teamwork skills and sociable personality.`;
 
 const experiences = [
   {
@@ -56,108 +77,50 @@ const education = [
   }
 ];
 
-const skills = [
-  {
-    category: "Frontend Development",
-    items: [
-      { name: "React", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "HTML/CSS", level: 95 },
-      { name: "Redux", level: 85 }
-    ]
-  },
-  {
-    category: "Backend Development",
-    items: [
-      { name: "Node.js", level: 90 },
-      { name: "Express.js", level: 85 },
-      { name: "MongoDB", level: 85 },
-      { name: "RESTful APIs", level: 90 }
-    ]
-  },
-  {
-    category: "Cloud & DevOps",
-    items: [
-      { name: "AWS", level: 80 },
-      { name: "Docker", level: 85 },
-      { name: "CI/CD", level: 80 },
-      { name: "Git", level: 95 }
-    ]
-  },
-  {
-    category: "Other Skills",
-    items: [
-      { name: "Problem Solving", level: 95 },
-      { name: "Team Leadership", level: 85 },
-      { name: "Agile/Scrum", level: 90 },
-      { name: "English", level: 85 }
-    ]
-  }
-];
-
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2c3e50',
-      light: '#34495e',
-      dark: '#1a252f',
+      main: '#2C3E50',
+      light: '#34495E',
+      dark: '#2C3E50',
     },
     secondary: {
-      main: '#3498db',
-      light: '#5dade2',
-      dark: '#2980b9',
+      main: '#64B5F6',
+      light: '#90CAF9',
+      dark: '#42A5F5',
+    },
+    text: {
+      primary: '#2C3E50',
+      secondary: '#7F8C8D',
     },
     background: {
-      default: '#ffffff',
-      paper: '#f8f9fa',
+      default: '#FFFFFF',
+      paper: '#FFFFFF',
     },
   },
   typography: {
-    fontFamily: '"Poppins", "Roboto", "Helvetica", "Arial", sans-serif',
-    h1: {
-      fontWeight: 700,
-      letterSpacing: '0.5px',
-    },
-    h2: {
-      fontWeight: 600,
-      letterSpacing: '0.3px',
-    },
-    h3: {
-      fontWeight: 600,
-      letterSpacing: '0.2px',
-    },
-    h4: {
-      fontWeight: 600,
-      letterSpacing: '0.2px',
-    },
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     h5: {
-      fontWeight: 500,
+      fontWeight: 600,
+      letterSpacing: 0.5,
     },
     h6: {
       fontWeight: 500,
+      letterSpacing: 0.3,
+    },
+    subtitle1: {
+      fontWeight: 400,
     },
     body1: {
+      fontSize: '0.95rem',
       lineHeight: 1.7,
     },
   },
   components: {
-    MuiPaper: {
+    MuiDivider: {
       styleOverrides: {
         root: {
-          borderRadius: 12,
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        },
-      },
-    },
-    MuiLinearProgress: {
-      styleOverrides: {
-        root: {
-          height: 8,
-          borderRadius: 4,
-          backgroundColor: '#e0e0e0',
-        },
-        bar: {
-          borderRadius: 4,
+          backgroundColor: '#E0E0E0',
         },
       },
     },
@@ -168,12 +131,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App">
-        <Header personalInfo={personalInfo} />
-        <Education education={education} />
-        <Skills skills={skills} />
-        <Experience experiences={experiences} />
-      </div>
+      <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+        <Sidebar personalInfo={personalInfo} />
+        <MainContent 
+          profile={profile}
+          education={education}
+          experiences={experiences}
+        />
+      </Box>
     </ThemeProvider>
   );
 }
