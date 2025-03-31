@@ -30,6 +30,9 @@ const Sidebar = ({ personalInfo }) => {
             height: 200,
             borderRadius: '50%',
             mb: 2,
+            objectFit: 'cover',
+            border: '4px solid #64B5F6',
+            boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
           }}
         />
         <Typography variant="h5" sx={{ mb: 1 }}>
@@ -62,17 +65,6 @@ const Sidebar = ({ personalInfo }) => {
           </ListItemIcon>
           <ListItemText primary={personalInfo.location} />
         </ListItem>
-      </List>
-
-      <Typography variant="h6" sx={{ mt: 4, mb: 2 }}>
-        SKILLS
-      </Typography>
-      <List>
-        {personalInfo.skills?.map((skill, index) => (
-          <ListItem key={index}>
-            <ListItemText primary={skill} />
-          </ListItem>
-        ))}
       </List>
 
       <Typography variant="h6" sx={{ mt: 4, mb: 2 }}>

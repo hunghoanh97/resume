@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
+import DownloadButton from './components/DownloadButton';
 
 const personalInfo = {
   name: "HOANH QUANG HUNG",
@@ -10,69 +11,138 @@ const personalInfo = {
   phone: "+84 123 456 789",
   location: "Hanoi, Vietnam",
   avatar: `${process.env.PUBLIC_URL}/Avatar.png`,
-  skills: [
-    "SQL Database Management",
-    "Linux/Unix Command line",
-    "Python",
-    "C++",
-    "JAVA",
-    ".NET Core",
-    "React",
-    "Node.js"
-  ],
   languages: [
     { name: "English", level: "Intermediate (TOEIC ~680-730)" },
     { name: "Japanese", level: "N4" }
   ],
   hobbies: [
-    "Reading",
+    "Gym",
     "Swimming",
-    "Playing Guitar"
+    "Billiard",
+    "Traveling"
   ]
 };
 
-const profile = `Dedicated Back-end Developer with over 5 years of experience in .NET Core development. 
-1+ year of experience in sub-lead position with strong knowledge in DevOps practices including Docker, Linux, Cloud, and CI/CD. 
-Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required. 
-Excellent teamwork skills and sociable personality.`;
+const skills = [
+  "C#",
+  ".NET Core",
+  "SQL Database",
+  "PostgreSQL",
+  "MySQL",
+  "Oracle",
+  "React",
+  "Linux/Unix Command line",
+  "Python",
+  "JAVA",
+  "Docker",
+  "AWS",
+  "CI/CD",
+  "Git"
+];
+
+const profile = `• Dedicated Back-end Developer with over 5 years of experience in .NET Core development.
+• More than 1 year of experience in sub-lead position with knowledge in DevOps practices including Docker, Linux and CI/CD.
+• Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required.
+• Excellent teamwork skills and sociable personality.`;
 
 const experiences = [
   {
     position: "Full-Stack Developer",
-    company: "FPT Software",
-    period: "2021 - Present",
-    description: "Working on enterprise-level applications using modern technologies and best practices.",
+    company: "CMC Technology Solutions",
+    period: "1/2025 - Present",
+    description: "Working on enterprise-level applications using .NET Core, React, and SQL Server.",
     achievements: [
       "Developed and maintained multiple full-stack applications using React, Node.js, and cloud services",
       "Implemented microservices architecture for better scalability and maintainability",
       "Led a team of 3 developers in a critical project",
-      "Reduced application load time by 40% through optimization techniques"
+      "Reduced application load time by 70% through optimization techniques"
     ]
   },
   {
-    position: "Frontend Developer",
-    company: "Viettel Group",
-    period: "2019 - 2021",
-    description: "Focused on developing responsive and user-friendly web applications.",
+    position: "Back-end Developer",
+    company: "FPT IS",
+    period: "4/2024 - 12/2024",
+    description: "Working on enterprise-level applications using .NET Core, SQL Server, rabbitMQ, S3 bucket, and AWS services.",
     achievements: [
-      "Built and maintained multiple client-facing applications",
-      "Implemented modern UI/UX practices resulting in 30% better user engagement",
-      "Developed reusable component library reducing development time by 25%"
+      "Developed a microservice for a large-scale enterprise application using .NET Core, SQL Server, and rabbitMQ",
+      "Analyzed and optimized the performance of the application",
+      "Documented the code and provided training to new developers"
+    ]
+  },
+  {
+    position: "Back-end Developer",
+    company: "3S Intersoft",
+    period: "1/2021 - 3/2024",
+    description: "Working on enterprise-level applications using .NET Core, Oracle, PostgreSQL, MySQL, and Python.",
+    achievements: [
+      "Developed a microservice for a large-scale enterprise application using .NET Core, Oracle.",
+      "Analyzed and optimized the performance of the application",
+      "Documented the code and provided training to new developers"
     ]
   }
 ];
 
 const education = [
   {
-    degree: "Bachelor of Computer Science",
-    school: "Hanoi University of Science and Technology",
-    period: "2015 - 2019",
-    description: "Major in Computer Science",
+    degree: "Bachelor of Software Engineering",
+    school: "FPT University",
+    period: "2015 - 2020",
+    description: "Major in Software Engineering",
     achievements: [
-      "GPA: 3.5/4.0",
-      "Active member of the University's Programming Club",
-      "Won second place in the University's Programming Competition",
-      "Completed multiple internships at leading tech companies"
+    ]
+  }
+];
+
+const projects = [
+  {
+    name: "Project Management System",
+    period: "2023 - Present",
+    description: "A comprehensive project management system for enterprise clients",
+    technologies: [
+      "Backend: .NET Core 7.0, SQL Server, Entity Framework Core",
+      "Frontend: React, TypeScript, Material-UI",
+      "DevOps: Docker, Azure DevOps, CI/CD",
+      "Other: RabbitMQ, Redis, Azure Services"
+    ],
+    responsibilities: [
+      "Led a team of 5 developers in developing and maintaining the system",
+      "Implemented microservices architecture for better scalability",
+      "Developed RESTful APIs and integrated with third-party services",
+      "Optimized database queries and improved system performance by 40%"
+    ]
+  },
+  {
+    name: "E-commerce Platform",
+    period: "2022 - 2023",
+    description: "A full-featured e-commerce platform with payment integration",
+    technologies: [
+      "Backend: .NET Core 6.0, PostgreSQL, Dapper",
+      "Frontend: React, Redux, Tailwind CSS",
+      "DevOps: Docker, GitHub Actions",
+      "Other: Stripe Payment, AWS S3, Elasticsearch"
+    ],
+    responsibilities: [
+      "Developed core features including product management and order processing",
+      "Implemented real-time inventory management system",
+      "Integrated multiple payment gateways and shipping providers",
+      "Reduced page load time by 60% through optimization"
+    ]
+  },
+  {
+    name: "HR Management System",
+    period: "2021 - 2022",
+    description: "An HR management system for large organizations",
+    technologies: [
+      "Backend: .NET Core 5.0, Oracle, Entity Framework",
+      "Frontend: Angular, Bootstrap",
+      "DevOps: Jenkins, SonarQube",
+      "Other: SignalR, Azure AD"
+    ],
+    responsibilities: [
+      "Developed employee management and attendance tracking modules",
+      "Implemented real-time notifications using SignalR",
+      "Created comprehensive reporting system",
+      "Achieved 95% test coverage through unit and integration testing"
     ]
   }
 ];
@@ -131,14 +201,17 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+      <Box id="cv-content" sx={{ display: 'flex', minHeight: '100vh' }}>
         <Sidebar personalInfo={personalInfo} />
         <MainContent 
           profile={profile}
-          education={education}
           experiences={experiences}
+          education={education}
+          projects={projects}
+          skills={skills}
         />
       </Box>
+      <DownloadButton />
     </ThemeProvider>
   );
 }
