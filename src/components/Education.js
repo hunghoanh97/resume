@@ -7,13 +7,13 @@ const Education = ({ education }) => {
   return (
     <Box sx={{ py: 6, bgcolor: 'background.default' }}>
       <Container>
-        <Typography 
-          variant="h3" 
-          component="h2" 
-          gutterBottom 
-          sx={{ 
-            display: 'flex', 
-            alignItems: 'center', 
+        <Typography
+          variant="h3"
+          component="h2"
+          gutterBottom
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
             gap: 2,
             mb: 4,
             color: 'primary.main',
@@ -26,8 +26,8 @@ const Education = ({ education }) => {
         <Grid container spacing={4}>
           {education.map((edu, index) => (
             <Grid item xs={12} key={index}>
-              <Card 
-                sx={{ 
+              <Card
+                sx={{
                   display: 'flex',
                   flexDirection: { xs: 'column', md: 'row' },
                   overflow: 'hidden',
@@ -63,50 +63,61 @@ const Education = ({ education }) => {
                   <SchoolIcon sx={{ fontSize: 80, opacity: 0.8 }} />
                 </CardMedia>
                 <CardContent sx={{ flex: 1, p: 4 }}>
-                  <Typography 
-                    variant="h4" 
-                    gutterBottom 
-                    sx={{ 
+                  <Typography
+                    variant="h4"
+                    gutterBottom
+                    sx={{
                       color: 'primary.main',
                       fontWeight: 600
                     }}
                   >
                     {edu.degree}
                   </Typography>
-                  <Typography 
-                    variant="h6" 
-                    color="secondary.main" 
+                  <Typography
+                    variant="h6"
+                    color="secondary.main"
                     gutterBottom
                     sx={{ fontWeight: 500 }}
                   >
                     {edu.school}
                   </Typography>
-                  <Typography 
-                    variant="subtitle1" 
-                    color="text.secondary" 
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
                     gutterBottom
                     sx={{ mb: 3 }}
                   >
                     {edu.period}
                   </Typography>
-                  <Typography 
-                    variant="body1" 
+                  <Typography
+                    variant="body1"
                     paragraph
-                    sx={{ 
+                    sx={{
                       color: 'text.secondary',
                       lineHeight: 1.8,
                       mb: 3
                     }}
                   >
-                    {edu.description}
+                    {edu.english}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    paragraph
+                    sx={{
+                      color: 'text.secondary',
+                      lineHeight: 1.8,
+                      mb: 3
+                    }}
+                  >
+                    {edu.japanese}
                   </Typography>
                   {edu.achievements && (
                     <Box sx={{ mt: 3 }}>
-                      <Typography 
-                        variant="h6" 
-                        sx={{ 
-                          display: 'flex', 
-                          alignItems: 'center', 
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
                           gap: 1,
                           mb: 2,
                           color: 'primary.main'
@@ -118,9 +129,9 @@ const Education = ({ education }) => {
                       <Grid container spacing={2}>
                         {edu.achievements.map((achievement, idx) => (
                           <Grid item xs={12} sm={6} key={idx}>
-                            <Paper 
-                              elevation={1} 
-                              sx={{ 
+                            <Paper
+                              elevation={1}
+                              sx={{
                                 p: 2,
                                 bgcolor: 'background.paper',
                                 borderLeft: '4px solid',

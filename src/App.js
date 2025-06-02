@@ -6,24 +6,29 @@ import MainContent from './components/MainContent';
 function App() {
   // Personal Information
   const personalInfo = {
-    name: "John Doe",
-    title: "Senior Software Engineer",
-    email: "john.doe@example.com",
-    phone: "+1 (123) 456-7890",
-    location: "New York, NY",
-    linkedin: "linkedin.com/in/johndoe",
-    github: "github.com/johndoe",
-    website: "johndoe.com"
+    name: "HOANH QUANG HUNG",
+    title: "Software Engineer",
+    email: "hoanhquanghung@gmail.com",
+    phone: "+84 989 693842",
+    location: "Ha Noi, VN",
+    linkedin: "https://www.linkedin.com/in/hoanh-quang-hung-763297273/",
+    github: "https://github.com/hunghoanh97",
+    facebook: "https://www.facebook.com/hunghq97"
   };
 
   // Profile
-  const profile = "Experienced software engineer with over 8 years of expertise in full-stack development, specializing in React, Node.js, and cloud technologies. Currently holding a sub-lead position at a Fortune 500 company, managing a team of 5 developers. Known for delivering high-quality code, mentoring junior developers, and driving innovation. With a sociable personality, I excel in collaborative environments and enjoy tackling complex technical challenges.";
+  const profile = [
+    "•Dedicated Back-end Developer with over 5 years of experience in .NET Core development.\n",
+    "•More than 1 year of experience in sub-lead position with knowledge in DevOps practices including Docker, Linux and CI/CD.\n",
+    "•Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required.\n",
+    "•Excellent teamwork skills and sociable personality."
+  ];
 
   // Skills
   const skills = [
-    "JavaScript", "TypeScript", "React", "Redux", "Node.js", "Express", 
-    "MongoDB", "PostgreSQL", "AWS", "Docker", "Kubernetes", "CI/CD", 
-    "RESTful APIs", "GraphQL", "Jest", "Agile/Scrum"
+    "C#", ".NET Core", "SQL server", "Postgres", "Oracle",  
+    "MongoDB", "MySQL", "AWS", "Docker", "Kubernetes", "CI/CD", 
+    "ReactJs", "Agile/Scrum"
   ];
 
   // Work Experience
@@ -69,26 +74,12 @@ function App() {
   // Education
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      school: "New York University",
-      period: "2013 - 2015",
-      description: "Specialized in Software Engineering and Artificial Intelligence",
-      achievements: [
-        "GPA: 3.8/4.0",
-        "Teaching Assistant for Introduction to Programming",
-        "Recipient of the Academic Excellence Scholarship"
-      ]
-    },
-    {
-      degree: "Bachelor of Science in Computer Engineering",
-      school: "University of California, Berkeley",
-      period: "2009 - 2013",
+      degree: "Bachelor of Software Engineering",
+      school: "FPT University",
+      period: "2016 - 2020",
       description: "Focused on Computer Architecture and Software Systems",
-      achievements: [
-        "GPA: 3.7/4.0",
-        "Dean's List for 6 consecutive semesters",
-        "Senior Project: Developed a real-time traffic monitoring system"
-      ]
+      english : "Intermediate (TOEIC ~680-730)",
+      japanese : "N4"
     }
   ];
 
