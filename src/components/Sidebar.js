@@ -43,37 +43,20 @@ const Sidebar = ({ personalInfo }) => {
           position: 'relative',
         }}
       >
-        {personalInfo.avatar ? (
-          <Box
-            component="img"
-            src={personalInfo.avatar}
-            alt={personalInfo.name}
-            sx={{
-              width: 120,
-              height: 120,
-              borderRadius: '50%',
-              mb: 2,
-              objectFit: 'cover',
-              border: '4px solid white',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-            }}
-          />
-        ) : (
-          <Avatar
-            sx={{
-              width: 120,
-              height: 120,
-              mb: 2,
-              bgcolor: '#2ecc71',
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              border: '4px solid white',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-            }}
-          >
-            {getInitials(personalInfo.name)}
-          </Avatar>
-        )}
+        <Box
+          component="img"
+          src={`${process.env.PUBLIC_URL}/Avatar.png`}
+          alt={personalInfo.name}
+          sx={{
+            width: 120,
+            height: 120,
+            borderRadius: '50%',
+            mb: 2,
+            objectFit: 'cover',
+            border: '4px solid white',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+          }}
+        />
         <Typography variant="h5" sx={{ mb: 1, fontWeight: 'bold', textAlign: 'center' }}>
           {personalInfo.name}
         </Typography>
