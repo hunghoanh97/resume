@@ -192,7 +192,7 @@ function App() {
             mb: { xs: 3, md: 0 },
             height: { xs: 'auto', md: 'auto' }
           }}>
-            <Sidebar personalInfo={personalInfo} />
+            <Sidebar personalInfo={personalInfo} education={education} />
           </Box>
           <Box sx={{ 
             width: { xs: '100%', md: '70%', lg: '75%' }, 

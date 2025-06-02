@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Typography, List, ListItem, ListItemIcon, ListItemText, Divider, Avatar, Chip } from '@mui/material';
+import { Box, Typography, List, ListItem, ListItemIcon, ListItemText, Chip } from '@mui/material';
 import { Phone, Email, LocationOn, LinkedIn, GitHub, Language } from '@mui/icons-material';
-import CodeIcon from '@mui/icons-material/Code';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import TranslateIcon from '@mui/icons-material/Translate';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import SchoolIcon from '@mui/icons-material/School';
 
-const Sidebar = ({ personalInfo }) => {
+const Sidebar = ({ personalInfo, education }) => {
   // Function to get initials from name
   const getInitials = (name) => {
     return name
@@ -228,6 +228,74 @@ const Sidebar = ({ personalInfo }) => {
                 />
               ))}
             </Box>
+          </>
+        )}
+
+        {/* Education Section */}
+        {education && education.length > 0 && (
+          <>
+            <Typography 
+              variant="h6" 
+              sx={{ 
+                mt: 4, 
+                mb: 2, 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: 1,
+                '&::after': {
+                  content: '""',
+                  flexGrow: 1,
+                  height: '2px',
+                  bgcolor: 'rgba(255,255,255,0.3)',
+                  ml: 1
+                }
+              }}
+            >
+              <SchoolIcon fontSize="small" />
+              EDUCATION
+            </Typography>
+            <List>
+              {education.map((edu, index) => (
+                <ListItem key={index} sx={{ px: 0, py: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 'bold', color: 'white' }}>
+                    {edu.degree}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
+                    {edu.school}
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', mb: 1 }}>
+                    {edu.period}
+                  </Typography>
+                  {edu.achievements && edu.achievements.length > 0 && (
+                    <Box sx={{ mt: 1, width: '100%' }}>
+                      {edu.achievements.map((achievement, idx) => (
+                        <Box 
+                          key={idx} 
+                          sx={{ 
+                            mb: 1,
+                            pl: 2,
+                            position: 'relative',
+                            '&::before': {
+                              content: '"•"',
+                              position: 'absolute',
+                              left: 0,
+                              color: 'rgba(255,255,255,0.7)'
+                            }
+                          }}
+                        >
+                          <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                            {achievement}
+                          </Typography>
+                        </Box>
+                      ))}
+                    </Box>
+                  )}
+                  {index < education.length - 1 && (
+                    <Box sx={{ width: '100%', height: '1px', bgcolor: 'rgba(255,255,255,0.1)', my: 1 }} />
+                  )}
+                </ListItem>
+              ))}
+            </List>
           </>
         )}
       </Box>

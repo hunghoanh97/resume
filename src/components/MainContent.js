@@ -313,6 +313,7 @@ const MainContent = ({ profile, experiences, education, projects, skills }) => {
       </Card>
 
       {/* Education Section */}
+      {/* Commented out as education section has been moved to Sidebar
       <Card elevation={3} sx={{ mb: 5, borderRadius: 2, overflow: 'hidden' }}>
         <Box sx={{ 
           height: '8px', 
@@ -403,6 +404,7 @@ const MainContent = ({ profile, experiences, education, projects, skills }) => {
           ))}
         </CardContent>
       </Card>
+      */}
     </Box>
   );
 };
