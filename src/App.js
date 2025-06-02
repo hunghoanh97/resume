@@ -1,217 +1,213 @@
 import React from 'react';
-import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
+import { Container, Grid, CssBaseline, ThemeProvider, createTheme, Box } from '@mui/material';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
-import DownloadButton from './components/DownloadButton';
 
-const personalInfo = {
-  name: "HOANH QUANG HUNG",
-  title: "Full-Stack Developer",
-  email: "hoanhquanghung@gmail.com",
-  phone: "+84 123 456 789",
-  location: "Hanoi, Vietnam",
-  avatar: `${process.env.PUBLIC_URL}/Avatar.png`,
-  languages: [
-    { name: "English", level: "Intermediate (TOEIC ~680-730)" },
-    { name: "Japanese", level: "N4" }
-  ],
-  hobbies: [
-    "Gym",
-    "Swimming",
-    "Billiard",
-    "Traveling"
-  ]
-};
+function App() {
+  // Personal Information
+  const personalInfo = {
+    name: "John Doe",
+    title: "Senior Software Engineer",
+    email: "john.doe@example.com",
+    phone: "+1 (123) 456-7890",
+    location: "New York, NY",
+    linkedin: "linkedin.com/in/johndoe",
+    github: "github.com/johndoe",
+    website: "johndoe.com"
+  };
 
-const skills = [
-  "C#",
-  ".NET Core",
-  "SQL Database",
-  "PostgreSQL",
-  "MySQL",
-  "Oracle",
-  "React",
-  "Linux/Unix Command line",
-  "Python",
-  "JAVA",
-  "Docker",
-  "AWS",
-  "CI/CD",
-  "Git"
-];
+  // Profile
+  const profile = "Experienced software engineer with over 8 years of expertise in full-stack development, specializing in React, Node.js, and cloud technologies. Currently holding a sub-lead position at a Fortune 500 company, managing a team of 5 developers. Known for delivering high-quality code, mentoring junior developers, and driving innovation. With a sociable personality, I excel in collaborative environments and enjoy tackling complex technical challenges.";
 
-const profile = `• Dedicated Back-end Developer with over 5 years of experience in .NET Core development.
-• More than 1 year of experience in sub-lead position with knowledge in DevOps practices including Docker, Linux and CI/CD.
-• Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required.
-• Excellent teamwork skills and sociable personality.`;
+  // Skills
+  const skills = [
+    "JavaScript", "TypeScript", "React", "Redux", "Node.js", "Express", 
+    "MongoDB", "PostgreSQL", "AWS", "Docker", "Kubernetes", "CI/CD", 
+    "RESTful APIs", "GraphQL", "Jest", "Agile/Scrum"
+  ];
 
-const experiences = [
-  {
-    position: "Full-Stack Developer",
-    company: "CMC Technology Solutions",
-    period: "1/2025 - Present",
-    description: "Working on enterprise-level applications using .NET Core, React, and SQL Server.",
-    achievements: [
-      "Developed and maintained multiple full-stack applications using React, Node.js, and cloud services",
-      "Implemented microservices architecture for better scalability and maintainability",
-      "Led a team of 3 developers in a critical project",
-      "Reduced application load time by 70% through optimization techniques"
-    ]
-  },
-  {
-    position: "Back-end Developer",
-    company: "FPT IS",
-    period: "4/2024 - 12/2024",
-    description: "Working on enterprise-level applications using .NET Core, SQL Server, rabbitMQ, S3 bucket, and AWS services.",
-    achievements: [
-      "Developed a microservice for a large-scale enterprise application using .NET Core, SQL Server, and rabbitMQ",
-      "Analyzed and optimized the performance of the application",
-      "Documented the code and provided training to new developers"
-    ]
-  },
-  {
-    position: "Back-end Developer",
-    company: "3S Intersoft",
-    period: "1/2021 - 3/2024",
-    description: "Working on enterprise-level applications using .NET Core, Oracle, PostgreSQL, MySQL, and Python.",
-    achievements: [
-      "Developed a microservice for a large-scale enterprise application using .NET Core, Oracle.",
-      "Analyzed and optimized the performance of the application",
-      "Documented the code and provided training to new developers"
-    ]
-  }
-];
+  // Work Experience
+  const experiences = [
+    {
+      position: "Senior Software Engineer",
+      company: "Tech Innovations Inc.",
+      period: "2020 - Present",
+      description: "Lead developer for the company's flagship product, a SaaS platform serving over 500,000 users.",
+      achievements: [
+        "Architected and implemented a microservices-based backend that improved system reliability by 35%",
+        "Led the migration from a monolithic architecture to a more scalable and maintainable codebase",
+        "Mentored junior developers and conducted code reviews to ensure code quality",
+        "Implemented CI/CD pipelines that reduced deployment time by 40%"
+      ]
+    },
+    {
+      position: "Software Engineer",
+      company: "Digital Solutions LLC",
+      period: "2017 - 2020",
+      description: "Full-stack developer for various client projects in the finance and healthcare sectors.",
+      achievements: [
+        "Developed responsive web applications using React and Redux",
+        "Created RESTful APIs using Node.js and Express",
+        "Implemented authentication and authorization systems using JWT",
+        "Optimized database queries that improved application performance by 25%"
+      ]
+    },
+    {
+      position: "Junior Developer",
+      company: "WebTech Solutions",
+      period: "2015 - 2017",
+      description: "Worked on front-end development for e-commerce websites.",
+      achievements: [
+        "Built interactive UI components using JavaScript and jQuery",
+        "Implemented responsive designs using CSS and Bootstrap",
+        "Collaborated with designers to ensure pixel-perfect implementation",
+        "Participated in daily stand-ups and sprint planning meetings"
+      ]
+    }
+  ];
 
-const education = [
-  {
-    degree: "Bachelor of Software Engineering",
-    school: "FPT University",
-    period: "2015 - 2020",
-    description: "Major in Software Engineering",
-    achievements: [
-    ]
-  }
-];
+  // Education
+  const education = [
+    {
+      degree: "Master of Science in Computer Science",
+      school: "New York University",
+      period: "2013 - 2015",
+      description: "Specialized in Software Engineering and Artificial Intelligence",
+      achievements: [
+        "GPA: 3.8/4.0",
+        "Teaching Assistant for Introduction to Programming",
+        "Recipient of the Academic Excellence Scholarship"
+      ]
+    },
+    {
+      degree: "Bachelor of Science in Computer Engineering",
+      school: "University of California, Berkeley",
+      period: "2009 - 2013",
+      description: "Focused on Computer Architecture and Software Systems",
+      achievements: [
+        "GPA: 3.7/4.0",
+        "Dean's List for 6 consecutive semesters",
+        "Senior Project: Developed a real-time traffic monitoring system"
+      ]
+    }
+  ];
 
-const projects = [
-  {
-    name: "Project Management System",
-    period: "2023 - Present",
-    description: "A comprehensive project management system for enterprise clients",
-    technologies: [
-      "Backend: .NET Core 7.0, SQL Server, Entity Framework Core",
-      "Frontend: React, TypeScript, Material-UI",
-      "DevOps: Docker, Azure DevOps, CI/CD",
-      "Other: RabbitMQ, Redis, Azure Services"
-    ],
-    responsibilities: [
-      "Led a team of 5 developers in developing and maintaining the system",
-      "Implemented microservices architecture for better scalability",
-      "Developed RESTful APIs and integrated with third-party services",
-      "Optimized database queries and improved system performance by 40%"
-    ]
-  },
-  {
-    name: "E-commerce Platform",
-    period: "2022 - 2023",
-    description: "A full-featured e-commerce platform with payment integration",
-    technologies: [
-      "Backend: .NET Core 6.0, PostgreSQL, Dapper",
-      "Frontend: React, Redux, Tailwind CSS",
-      "DevOps: Docker, GitHub Actions",
-      "Other: Stripe Payment, AWS S3, Elasticsearch"
-    ],
-    responsibilities: [
-      "Developed core features including product management and order processing",
-      "Implemented real-time inventory management system",
-      "Integrated multiple payment gateways and shipping providers",
-      "Reduced page load time by 60% through optimization"
-    ]
-  },
-  {
-    name: "HR Management System",
-    period: "2021 - 2022",
-    description: "An HR management system for large organizations",
-    technologies: [
-      "Backend: .NET Core 5.0, Oracle, Entity Framework",
-      "Frontend: Angular, Bootstrap",
-      "DevOps: Jenkins, SonarQube",
-      "Other: SignalR, Azure AD"
-    ],
-    responsibilities: [
-      "Developed employee management and attendance tracking modules",
-      "Implemented real-time notifications using SignalR",
-      "Created comprehensive reporting system",
-      "Achieved 95% test coverage through unit and integration testing"
-    ]
-  }
-];
+  // Projects
+  const projects = [
+    {
+      name: "E-commerce Platform",
+      period: "2019 - 2020",
+      description: "A full-featured e-commerce platform with payment processing, inventory management, and analytics dashboard.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe API", "AWS"],
+      responsibilities: [
+        "Designed and implemented the front-end using React and Redux",
+        "Developed RESTful APIs for product management and order processing",
+        "Integrated Stripe for payment processing",
+        "Deployed the application on AWS using Docker and Kubernetes"
+      ]
+    },
+    {
+      name: "Healthcare Management System",
+      period: "2018 - 2019",
+      description: "A comprehensive system for managing patient records, appointments, and billing for a network of clinics.",
+      technologies: ["Angular", "Node.js", "Express", "PostgreSQL", "Socket.io", "Azure"],
+      responsibilities: [
+        "Led a team of 3 developers to build the application",
+        "Implemented real-time notifications using Socket.io",
+        "Designed and implemented the database schema",
+        "Integrated with third-party APIs for insurance verification"
+      ]
+    },
+    {
+      name: "Personal Finance Tracker",
+      period: "2017",
+      description: "A mobile application for tracking personal expenses, creating budgets, and generating financial reports.",
+      technologies: ["React Native", "Firebase", "Redux", "Chart.js"],
+      responsibilities: [
+        "Developed the entire application from concept to deployment",
+        "Implemented data visualization using Chart.js",
+        "Created a responsive UI that works on both iOS and Android",
+        "Integrated with Firebase for authentication and real-time database"
+      ]
+    }
+  ];
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#2C3E50',
-      light: '#34495E',
-      dark: '#2C3E50',
+  // Create a theme
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#3498db',
+        light: '#5dade2',
+        dark: '#2980b9',
+      },
+      secondary: {
+        main: '#2ecc71',
+        light: '#58d68d',
+        dark: '#27ae60',
+      },
+      background: {
+        default: '#f5f8fa',
+        paper: '#ffffff',
+      },
     },
-    secondary: {
-      main: '#64B5F6',
-      light: '#90CAF9',
-      dark: '#42A5F5',
+    typography: {
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      h5: {
+        fontWeight: 600,
+      },
+      h6: {
+        fontWeight: 600,
+      },
     },
-    text: {
-      primary: '#2C3E50',
-      secondary: '#7F8C8D',
-    },
-    background: {
-      default: '#FFFFFF',
-      paper: '#FFFFFF',
-    },
-  },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h5: {
-      fontWeight: 600,
-      letterSpacing: 0.5,
-    },
-    h6: {
-      fontWeight: 500,
-      letterSpacing: 0.3,
-    },
-    subtitle1: {
-      fontWeight: 400,
-    },
-    body1: {
-      fontSize: '0.95rem',
-      lineHeight: 1.7,
-    },
-  },
-  components: {
-    MuiDivider: {
-      styleOverrides: {
-        root: {
-          backgroundColor: '#E0E0E0',
+    components: {
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            transition: 'all 0.3s ease',
+          },
+        },
+      },
+      MuiChip: {
+        styleOverrides: {
+          root: {
+            fontWeight: 500,
+          },
         },
       },
     },
-  },
-});
+  });
 
-function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box id="cv-content" sx={{ display: 'flex', minHeight: '100vh' }}>
-        <Sidebar personalInfo={personalInfo} />
-        <MainContent 
-          profile={profile}
-          experiences={experiences}
-          education={education}
-          projects={projects}
-          skills={skills}
-        />
-      </Box>
-      <DownloadButton />
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Box sx={{ 
+          display: 'flex', 
+          flexDirection: { xs: 'column', md: 'row' },
+          minHeight: '100vh',
+          gap: { xs: 3, md: 0 }
+        }}>
+          <Box sx={{ 
+            width: { xs: '100%', md: '30%', lg: '25%' }, 
+            mb: { xs: 3, md: 0 },
+            height: { xs: 'auto', md: 'auto' }
+          }}>
+            <Sidebar personalInfo={personalInfo} />
+          </Box>
+          <Box sx={{ 
+            width: { xs: '100%', md: '70%', lg: '75%' }, 
+            pl: { xs: 0, md: 3 }
+          }}>
+            <MainContent 
+              profile={profile} 
+              experiences={experiences} 
+              education={education} 
+              projects={projects} 
+              skills={skills} 
+            />
+          </Box>
+        </Box>
+      </Container>
     </ThemeProvider>
   );
 }
