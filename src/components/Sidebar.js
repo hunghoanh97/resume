@@ -4,6 +4,7 @@ import { Phone, Email, LocationOn, LinkedIn, GitHub, Language } from '@mui/icons
 import TranslateIcon from '@mui/icons-material/Translate';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import SchoolIcon from '@mui/icons-material/School';
+import ProfileCard from './ProfileCard';
 
 const Sidebar = ({ personalInfo, education }) => {
   // Function to get initials from name
@@ -32,10 +33,9 @@ const Sidebar = ({ personalInfo, education }) => {
         top: { xs: 'auto', md: '20px' },
       }}
     >
-      {/* Header with gradient */}
+      {/* Header with ProfileCard */}
       <Box
         sx={{
-          background: 'linear-gradient(135deg, #3498db, #2ecc71)',
           p: 3,
           display: 'flex',
           flexDirection: 'column',
@@ -43,32 +43,16 @@ const Sidebar = ({ personalInfo, education }) => {
           position: 'relative',
         }}
       >
-        <Box
-          component="img"
-          src={`${process.env.PUBLIC_URL}/Avatar.png`}
-          alt={personalInfo.name}
-          sx={{
-            width: 120,
-            height: 120,
-            borderRadius: '50%',
-            mb: 2,
-            objectFit: 'cover',
-            border: '4px solid white',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-          }}
-        />
-        <Typography variant="h5" sx={{ mb: 1, fontWeight: 'bold', textAlign: 'center' }}>
-          {personalInfo.name}
-        </Typography>
-        <Chip 
-          label={personalInfo.title} 
-          sx={{ 
-            bgcolor: 'rgba(255,255,255,0.2)', 
-            color: 'white', 
-            fontWeight: 500,
-            mb: 1,
-            '& .MuiChip-label': { px: 2 }
-          }} 
+        <ProfileCard
+          name={personalInfo.name}
+          title={personalInfo.title}
+          handle={personalInfo.github ? personalInfo.github.split('/').pop() : ''}
+          status="Online"
+          contactText="Contact Me"
+          avatarUrl={`${process.env.PUBLIC_URL}/Avatar.png`}
+          showUserInfo={true}
+          enableTilt={true}
+          onContactClick={() => window.location.href = `mailto:${personalInfo.email}`}
         />
       </Box>
 
