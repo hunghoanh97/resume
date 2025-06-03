@@ -18,10 +18,10 @@ function App() {
 
   // Profile
   const profile = [
-    "•Dedicated Back-end Developer with over 5 years of experience in .NET Core development.\n",
-    "•More than 1 year of experience in sub-lead position with knowledge in DevOps practices including Docker, Linux and CI/CD.\n",
-    "•Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required.\n",
-    "•Excellent teamwork skills and sociable personality."
+    "• Dedicated Back-end Developer with over 5 years of experience in .NET Core development.\n",
+    "• More than 1 year of experience in sub-lead position with knowledge in DevOps practices including Docker, Linux and CI/CD.\n",
+    "• Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required.\n",
+    "• Excellent teamwork skills and sociable personality."
   ];
 
   // Skills
@@ -34,10 +34,10 @@ function App() {
   // Work Experience
   const experiences = [
     {
-      position: "Senior Software Engineer",
-      company: "Tech Innovations Inc.",
-      period: "2020 - Present",
-      description: "Lead developer for the company's flagship product, a SaaS platform serving over 500,000 users.",
+      position: "Full-Stack Developer",
+      company: "CMC Technology Solutions",
+      period: "1/2025 - Present",
+      description: "Working on enterprise-level applications, microservices architecture, and DevOps practices.",
       achievements: [
         "Architected and implemented a microservices-based backend that improved system reliability by 35%",
         "Led the migration from a monolithic architecture to a more scalable and maintainable codebase",
