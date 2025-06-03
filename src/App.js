@@ -41,14 +41,13 @@ function App() {
       achievements: [
         "Architected and implemented a microservices-based backend that improved system reliability by 35%",
         "Led the migration from a monolithic architecture to a more scalable and maintainable codebase",
-        "Mentored junior developers and conducted code reviews to ensure code quality",
-        "Implemented CI/CD pipelines that reduced deployment time by 40%"
+        "Mentored junior developers and conducted code reviews to ensure code quality"
       ]
     },
     {
-      position: "Software Engineer",
-      company: "Digital Solutions LLC",
-      period: "2017 - 2020",
+      position: "Back-end Developer",
+      company: "FPT IS",
+      period: "4/2024 - 12/2024",
       description: "Full-stack developer for various client projects in the finance and healthcare sectors.",
       achievements: [
         "Developed responsive web applications using React and Redux",
@@ -58,9 +57,21 @@ function App() {
       ]
     },
     {
-      position: "Junior Developer",
-      company: "WebTech Solutions",
-      period: "2015 - 2017",
+      position: "Back-end Developer",
+      company: "3s Intersoft",
+      period: "12/2020 - 4/2024",
+      description: "Worked on front-end development for e-commerce websites.",
+      achievements: [
+        "Built interactive UI components using JavaScript and jQuery",
+        "Implemented responsive designs using CSS and Bootstrap",
+        "Collaborated with designers to ensure pixel-perfect implementation",
+        "Participated in daily stand-ups and sprint planning meetings"
+      ]
+    },
+    {
+      position: "Back-end Developer",
+      company: "FPT Hoa Lac",
+      period: "1/2020 - 10/2020",
       description: "Worked on front-end development for e-commerce websites.",
       achievements: [
         "Built interactive UI components using JavaScript and jQuery",
