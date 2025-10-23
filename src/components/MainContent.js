@@ -77,25 +77,42 @@ const MainContent = ({ profile, experiences, education, projects, skills }) => {
             <CodeIcon color="secondary" />
             SKILLS
           </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mb: 2 }}>
-            {skills.map((skill, index) => (
-              <Chip
-                key={index}
-                label={skill}
-                sx={{
-                  fontWeight: 500,
-                  color: 'white',
-                  background: `linear-gradient(135deg, ${index % 2 === 0 ? '#3498db, #2980b9' : '#2ecc71, #27ae60'})`,
-                  px: 1,
-                  '&:hover': {
-                    transform: 'translateY(-2px)',
-                    transition: 'transform 0.3s ease',
-                    boxShadow: 2
-                  }
-                }}
-              />
+          <Grid container spacing={3}>
+            {skills.map((section, sIdx) => (
+              <Grid item xs={12} md={6} key={sIdx}>
+                <Box sx={{ mb: 1 }}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 600, color: 'text.primary' }}>
+                    {section.category}
+                  </Typography>
+                </Box>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                  {section.items.map((item, idx) => (
+                    <Box key={idx} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <Box
+                        sx={{
+                          width: 6,
+                          height: 6,
+                          borderRadius: '50%',
+                          background: `linear-gradient(135deg, ${idx % 2 === 0 ? '#3498db, #2980b9' : '#2ecc71, #27ae60'})`,
+                          flexShrink: 0
+                        }}
+                      />
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontWeight: 500,
+                          color: 'text.primary',
+                          fontSize: '0.875rem'
+                        }}
+                      >
+                        {item}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Grid>
             ))}
-          </Box>
+          </Grid>
         </CardContent>
       </Card>
 

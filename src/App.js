@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Grid, CssBaseline, ThemeProvider, createTheme, Box } from '@mui/material';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
+import DownloadButton from './components/DownloadButton';
 
 function App() {
   // Personal Information
@@ -10,10 +11,21 @@ function App() {
     title: "Software Engineer",
     email: "hoanhquanghung@gmail.com",
     phone: "+84 989 693842",
-    location: "Ha Noi, VN",
+    location: "Hanoi, Vietnam",
     linkedin: "https://www.linkedin.com/in/hoanh-quang-hung-763297273/",
     github: "https://github.com/hunghoanh97",
-    facebook: "https://www.facebook.com/hunghq97"
+    facebook: "https://www.facebook.com/hunghq97",
+    website: "https://hunghoanh97.github.io/resume",
+    summary: `Software Engineer with 5+ years building reliable, scalable services in .NET.
+Over the past year, I have worked in a sub‑lead capacity, coaching teammates and
+strengthening delivery with DevOps practices across Docker, Linux, and CI/CD.
+I focus on clean architecture, performance, and maintainable code, and I collaborate
+closely with stakeholders to deliver measurable outcomes.`,
+    languages: [
+      { name: 'English', level: 'Upper Intermediate (B2)' },
+      { name: 'Japanese', level: 'Beginner (JLPT N4)' }
+    ],
+    hobbies: ['Running', 'Photography', 'Chess', 'Reading tech blogs']
   };
 
   // Profile
@@ -26,58 +38,44 @@ function App() {
 
   // Skills
   const skills = [
-    "C#", ".NET Core", "SQL server", "Postgres", "Oracle",  
-    "MongoDB", "MySQL", "AWS", "Docker", "Kubernetes", "CI/CD", 
-    "ReactJs", "Agile/Scrum"
+    { category: "Programming Languages", items: ["C#", ".NET Core", "Python", "Truffle", "Java", "Solidity"] },
+    { category: "Design Patterns", items: ["Repository Pattern", "UnitOfWork", "Clean Architecture", "MVC", "Domain Driven Design", "CQRS"] },
+    { category: "Database", items: ["Oracle", "Postgres", "MS SQL Server", "MySQL"] },
+    { category: "Version Control", items: ["Git", "SVN"] }
   ];
 
   // Work Experience
   const experiences = [
     {
-      position: "Full-Stack Developer",
+      position: "Software Engineer",
       company: "CMC Technology Solutions",
-      period: "1/2025 - Present",
-      description: "Working on enterprise-level applications, microservices architecture, and DevOps practices.",
+      period: "01/2025 - Present",
+      description: "Design and build cloud-native services and internal tools across .NET and React.",
       achievements: [
-        "Architected and implemented a microservices-based backend that improved system reliability by 35%",
-        "Led the migration from a monolithic architecture to a more scalable and maintainable codebase",
-        "Mentored junior developers and conducted code reviews to ensure code quality"
       ]
     },
     {
       position: "Back-end Developer",
       company: "FPT IS",
-      period: "4/2024 - 12/2024",
-      description: "Full-stack developer for various client projects in the finance and healthcare sectors.",
+      period: "04/2024 - 12/2024",
+      description: "Built and maintained enterprise back-end services in .NET and SQL.",
       achievements: [
-        "Developed responsive web applications using React and Redux",
-        "Created RESTful APIs using Node.js and Express",
-        "Implemented authentication and authorization systems using JWT",
-        "Optimized database queries that improved application performance by 25%"
       ]
     },
     {
       position: "Back-end Developer",
-      company: "3s Intersoft",
-      period: "12/2020 - 4/2024",
-      description: "Worked on front-end development for e-commerce websites.",
+      company: "3S Intersoft",
+      period: "12/2020 - 04/2024",
+      description: "Developed APIs, integrations, and background jobs supporting core business workflows.",
       achievements: [
-        "Built interactive UI components using JavaScript and jQuery",
-        "Implemented responsive designs using CSS and Bootstrap",
-        "Collaborated with designers to ensure pixel-perfect implementation",
-        "Participated in daily stand-ups and sprint planning meetings"
       ]
     },
     {
       position: "Back-end Developer",
       company: "FPT Hoa Lac",
-      period: "1/2020 - 10/2020",
-      description: "Worked on front-end development for e-commerce websites.",
+      period: "01/2020 - 10/2020",
+      description: "Contributed to back-end features and data models for internal applications.",
       achievements: [
-        "Built interactive UI components using JavaScript and jQuery",
-        "Implemented responsive designs using CSS and Bootstrap",
-        "Collaborated with designers to ensure pixel-perfect implementation",
-        "Participated in daily stand-ups and sprint planning meetings"
       ]
     }
   ];
@@ -88,9 +86,13 @@ function App() {
       degree: "Bachelor of Software Engineering",
       school: "FPT University",
       period: "2016 - 2020",
-      description: "Focused on Computer Architecture and Software Systems",
-      english : "Intermediate (TOEIC ~680-730)",
-      japanese : "N4"
+      description: "Coursework in algorithms, database systems, computer architecture, and software engineering.",
+      english: "English: Upper Intermediate (TOEIC ~680-730)",
+      japanese: "Japanese: JLPT N4",
+      achievements: [
+        "Capstone project evaluated by faculty with positive feedback.",
+        "Completed bilingual coursework in English and Japanese."
+      ]
     }
   ];
 
@@ -99,37 +101,37 @@ function App() {
     {
       name: "E-commerce Platform",
       period: "2019 - 2020",
-      description: "A full-featured e-commerce platform with payment processing, inventory management, and analytics dashboard.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe API", "AWS"],
+      description: "A full-featured e-commerce platform with secure payment processing, inventory management, and analytics.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe", "AWS"],
       responsibilities: [
-        "Designed and implemented the front-end using React and Redux",
-        "Developed RESTful APIs for product management and order processing",
-        "Integrated Stripe for payment processing",
-        "Deployed the application on AWS using Docker and Kubernetes"
+        "Implemented responsive front-end using React and Redux.",
+        "Developed RESTful APIs for products, orders, and payments.",
+        "Integrated Stripe securely for checkout and refunds.",
+        "Containerized and deployed on AWS using Docker."
       ]
     },
     {
       name: "Healthcare Management System",
       period: "2018 - 2019",
-      description: "A comprehensive system for managing patient records, appointments, and billing for a network of clinics.",
+      description: "A system for managing patient records, appointments, and billing with real-time notifications.",
       technologies: ["Angular", "Node.js", "Express", "PostgreSQL", "Socket.io", "Azure"],
       responsibilities: [
-        "Led a team of 3 developers to build the application",
-        "Implemented real-time notifications using Socket.io",
-        "Designed and implemented the database schema",
-        "Integrated with third-party APIs for insurance verification"
+        "Led a small team to deliver features iteratively.",
+        "Implemented real-time notifications using Socket.io.",
+        "Designed and implemented the database schema.",
+        "Integrated third-party APIs for insurance verification."
       ]
     },
     {
       name: "Personal Finance Tracker",
       period: "2017",
-      description: "A mobile application for tracking personal expenses, creating budgets, and generating financial reports.",
+      description: "A mobile app to track expenses, budgets, and reports with data visualization.",
       technologies: ["React Native", "Firebase", "Redux", "Chart.js"],
       responsibilities: [
-        "Developed the entire application from concept to deployment",
-        "Implemented data visualization using Chart.js",
-        "Created a responsive UI that works on both iOS and Android",
-        "Integrated with Firebase for authentication and real-time database"
+        "Developed the application from concept to deployment.",
+        "Implemented charts and visualizations using Chart.js.",
+        "Designed a responsive UI for both iOS and Android.",
+        "Integrated Firebase for authentication and real-time database."
       ]
     }
   ];
@@ -153,9 +155,16 @@ function App() {
       },
     },
     typography: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
       h5: {
         fontWeight: 600,
+      },
+      subtitle1: {
+        fontWeight: 500,
+        lineHeight: 1.6,
+      },
+      body1: {
+        lineHeight: 1.75,
       },
       h6: {
         fontWeight: 600,
@@ -182,7 +191,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+      <Container id="cv-content" maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Box sx={{ 
           display: 'flex', 
           flexDirection: { xs: 'column', md: 'row' },
@@ -210,6 +219,7 @@ function App() {
           </Box>
         </Box>
       </Container>
+      <DownloadButton />
     </ThemeProvider>
   );
 }

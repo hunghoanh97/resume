@@ -81,13 +81,49 @@ const Sidebar = ({ personalInfo, education }) => {
             <ListItemIcon sx={{ minWidth: 40 }}>
               <Phone sx={{ color: 'white' }} />
             </ListItemIcon>
-            <ListItemText primary={personalInfo.phone} primaryTypographyProps={{ fontSize: '0.9rem' }} />
+            <ListItemText 
+              primary={
+                <Typography 
+                  component="a" 
+                  href={`tel:${personalInfo.phone}`}
+                  sx={{ 
+                    fontSize: '0.9rem',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    '&:hover': {
+                      textDecoration: 'underline',
+                      color: 'rgba(255,255,255,0.8)'
+                    }
+                  }}
+                >
+                  {personalInfo.phone}
+                </Typography>
+              } 
+            />
           </ListItem>
           <ListItem sx={{ px: 0, py: 0.5 }}>
             <ListItemIcon sx={{ minWidth: 40 }}>
               <Email sx={{ color: 'white' }} />
             </ListItemIcon>
-            <ListItemText primary={personalInfo.email} primaryTypographyProps={{ fontSize: '0.9rem' }} />
+            <ListItemText 
+              primary={
+                <Typography 
+                  component="a" 
+                  href={`mailto:${personalInfo.email}`}
+                  sx={{ 
+                    fontSize: '0.9rem',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    '&:hover': {
+                      textDecoration: 'underline',
+                      color: 'rgba(255,255,255,0.8)'
+                    }
+                  }}
+                >
+                  {personalInfo.email}
+                </Typography>
+              } 
+            />
           </ListItem>
           <ListItem sx={{ px: 0, py: 0.5 }}>
             <ListItemIcon sx={{ minWidth: 40 }}>
@@ -100,7 +136,27 @@ const Sidebar = ({ personalInfo, education }) => {
               <ListItemIcon sx={{ minWidth: 40 }}>
                 <LinkedIn sx={{ color: 'white' }} />
               </ListItemIcon>
-              <ListItemText primary={personalInfo.linkedin} primaryTypographyProps={{ fontSize: '0.9rem' }} />
+              <ListItemText 
+                primary={
+                  <Typography 
+                    component="a" 
+                    href={personalInfo.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{ 
+                      fontSize: '0.9rem',
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      '&:hover': {
+                        textDecoration: 'underline',
+                        color: 'rgba(255,255,255,0.8)'
+                      }
+                    }}
+                  >
+                    {personalInfo.linkedin}
+                  </Typography>
+                } 
+              />
             </ListItem>
           )}
           {personalInfo.github && (
@@ -108,7 +164,27 @@ const Sidebar = ({ personalInfo, education }) => {
               <ListItemIcon sx={{ minWidth: 40 }}>
                 <GitHub sx={{ color: 'white' }} />
               </ListItemIcon>
-              <ListItemText primary={personalInfo.github} primaryTypographyProps={{ fontSize: '0.9rem' }} />
+              <ListItemText 
+                primary={
+                  <Typography 
+                    component="a" 
+                    href={personalInfo.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{ 
+                      fontSize: '0.9rem',
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      '&:hover': {
+                        textDecoration: 'underline',
+                        color: 'rgba(255,255,255,0.8)'
+                      }
+                    }}
+                  >
+                    {personalInfo.github}
+                  </Typography>
+                } 
+              />
             </ListItem>
           )}
           {personalInfo.website && (
@@ -116,7 +192,27 @@ const Sidebar = ({ personalInfo, education }) => {
               <ListItemIcon sx={{ minWidth: 40 }}>
                 <Language sx={{ color: 'white' }} />
               </ListItemIcon>
-              <ListItemText primary={personalInfo.website} primaryTypographyProps={{ fontSize: '0.9rem' }} />
+              <ListItemText 
+                primary={
+                  <Typography 
+                    component="a" 
+                    href={personalInfo.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{ 
+                      fontSize: '0.9rem',
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      '&:hover': {
+                        textDecoration: 'underline',
+                        color: 'rgba(255,255,255,0.8)'
+                      }
+                    }}
+                  >
+                    {personalInfo.website}
+                  </Typography>
+                } 
+              />
             </ListItem>
           )}
         </List>

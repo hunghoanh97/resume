@@ -53,25 +53,87 @@ const Header = ({ personalInfo }) => {
               p: 3,
               borderRadius: 2,
               backdropFilter: 'blur(10px)',
-              maxWidth: 300,
-              ml: '50%' // Add margin-left: auto to push to the right
+              width: 320,
+              ml: 'auto'
             }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <EmailIcon sx={{ color: 'secondary.light' }} />
-                <Typography>{personalInfo.email}</Typography>
+              <Box sx={{ display: 'grid', gridTemplateColumns: '24px 1fr', alignItems: 'center', columnGap: 8, minHeight: 32 }}>
+                <EmailIcon sx={{ color: 'secondary.light', fontSize: 20, justifySelf: 'center' }} />
+                <Typography 
+                  component="a" 
+                  href={`mailto:${personalInfo.email}`}
+                  noWrap 
+                  sx={{ 
+                    overflow: 'hidden', 
+                    textOverflow: 'ellipsis',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    '&:hover': {
+                      textDecoration: 'underline',
+                      color: 'secondary.light'
+                    }
+                  }}
+                >
+                  {personalInfo.email}
+                </Typography>
               </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <PhoneIcon sx={{ color: 'secondary.light' }} />
-                <Typography>{personalInfo.phone}</Typography>
+              <Box sx={{ display: 'grid', gridTemplateColumns: '24px 1fr', alignItems: 'center', columnGap: 8, minHeight: 32 }}>
+                <PhoneIcon sx={{ color: 'secondary.light', fontSize: 20, justifySelf: 'center' }} />
+                <Typography 
+                  component="a" 
+                  href={`tel:${personalInfo.phone}`}
+                  noWrap 
+                  sx={{ 
+                    overflow: 'hidden', 
+                    textOverflow: 'ellipsis',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    '&:hover': {
+                      textDecoration: 'underline',
+                      color: 'secondary.light'
+                    }
+                  }}
+                >
+                  {personalInfo.phone}
+                </Typography>
               </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <LocationOnIcon sx={{ color: 'secondary.light' }} />
-                <Typography>{personalInfo.location}</Typography>
+              <Box sx={{ display: 'grid', gridTemplateColumns: '24px 1fr', alignItems: 'center', columnGap: 8, minHeight: 32 }}>
+                <LocationOnIcon sx={{ color: 'secondary.light', fontSize: 20, justifySelf: 'center' }} />
+                <Typography noWrap sx={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{personalInfo.location}</Typography>
               </Box>
               <Divider sx={{ my: 1, bgcolor: 'rgba(255, 255, 255, 0.2)' }} />
               <Box sx={{ display: 'flex', gap: 2, mt: 1 }}>
-                <LinkedInIcon sx={{ cursor: 'pointer', '&:hover': { color: 'secondary.light' } }} />
-                <GitHubIcon sx={{ cursor: 'pointer', '&:hover': { color: 'secondary.light' } }} />
+                <LinkedInIcon 
+                  component="a"
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    cursor: 'pointer', 
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    '&:hover': { 
+                      color: 'secondary.light',
+                      transform: 'translateY(-2px)',
+                      transition: 'all 0.3s ease'
+                    } 
+                  }} 
+                />
+                <GitHubIcon 
+                  component="a"
+                  href={personalInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    cursor: 'pointer', 
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    '&:hover': { 
+                      color: 'secondary.light',
+                      transform: 'translateY(-2px)',
+                      transition: 'all 0.3s ease'
+                    } 
+                  }} 
+                />
               </Box>
             </Box>
           </Grid>
@@ -119,4 +181,4 @@ const Header = ({ personalInfo }) => {
   );
 };
 
-export default Header; 
+export default Header;

@@ -93,9 +93,11 @@ const Education = ({ education }) => {
                     variant="body1"
                     paragraph
                     sx={{
-                      color: 'text.secondary',
+                      color: 'primary.main',
+                      fontWeight: 500,
                       lineHeight: 1.8,
-                      mb: 3
+                      mb: 3,
+                      fontStyle: 'italic'
                     }}
                   >
                     {edu.english}
@@ -104,9 +106,11 @@ const Education = ({ education }) => {
                     variant="body1"
                     paragraph
                     sx={{
-                      color: 'text.secondary',
+                      color: 'secondary.main',
+                      fontWeight: 500,
                       lineHeight: 1.8,
-                      mb: 3
+                      mb: 3,
+                      textDecoration: 'underline'
                     }}
                   >
                     {edu.japanese}
@@ -157,4 +161,4 @@ const Education = ({ education }) => {
   );
 };
 
-export default Education; 
+export default Education;
