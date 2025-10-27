@@ -22,18 +22,18 @@ strengthening delivery with DevOps practices across Docker, Linux, and CI/CD.
 I focus on clean architecture, performance, and maintainable code, and I collaborate
 closely with stakeholders to deliver measurable outcomes.`,
     languages: [
-      { name: 'English', level: 'Upper Intermediate (B2)' },
-      { name: 'Japanese', level: 'Beginner (JLPT N4)' }
+      { name: 'English', level: 'Intermediate (B2)' },
+      { name: 'Japanese', level: 'Lower Intermediate (JLPT N4)' }
     ],
-    hobbies: ['Running', 'Photography', 'Chess', 'Reading tech blogs']
+    hobbies: ['Gymnastics', 'Billiards', 'Reading tech blogs']
   };
 
   // Profile
   const profile = [
     "• Dedicated Back-end Developer with over 5 years of experience in .NET Core development.\n",
-    "• More than 1 year of experience in sub-lead position with knowledge in DevOps practices including Docker, Linux and CI/CD.\n",
-    "• Committed to delivering high-quality work with a strong sense of responsibility and the ability to learn new technologies as required.\n",
-    "• Excellent teamwork skills and sociable personality."
+    "• 2 years of experience in a leadership role with solid knowledge of DevOps practices including Docker, Linux, and CI/CD.\n",
+    "• Strong sense of responsibility, committed to delivering high-quality work, and quick to adapt to new technologies.\n",
+    "• Excellent team player with a sociable and proactive personality."
   ];
 
   // Skills
@@ -50,7 +50,7 @@ closely with stakeholders to deliver measurable outcomes.`,
       position: "Software Engineer",
       company: "CMC Technology Solutions",
       period: "01/2025 - Present",
-      description: "Design and build cloud-native services and internal tools across .NET and React.",
+      description: "Maintain, design and build Micro services and internal tools across .NET and React.",
       achievements: [
       ]
     },
@@ -58,7 +58,7 @@ closely with stakeholders to deliver measurable outcomes.`,
       position: "Back-end Developer",
       company: "FPT IS",
       period: "04/2024 - 12/2024",
-      description: "Built and maintained enterprise back-end services in .NET and SQL.",
+      description: "Architected and implemented scalable microservices for enterprise applications using .NET Core and SQL Server.",
       achievements: [
       ]
     },
@@ -99,39 +99,69 @@ closely with stakeholders to deliver measurable outcomes.`,
   // Projects
   const projects = [
     {
-      name: "E-commerce Platform",
-      period: "2019 - 2020",
-      description: "A full-featured e-commerce platform with secure payment processing, inventory management, and analytics.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe", "AWS"],
+      name: "C-Contract",
+      period: "1/2025 - Present",
+      description: "A digital contract platform that enables secure, paperless signing and management of contracts for businesses.",
+      Customer: "TP-Bank, Masan, Pepsi",
+      technologies: [".Net", "React", "PostgreSQL", "Redis", "RabbitMQ"],
       responsibilities: [
         "Implemented responsive front-end using React and Redux.",
-        "Developed RESTful APIs for products, orders, and payments.",
-        "Integrated Stripe securely for checkout and refunds.",
-        "Containerized and deployed on AWS using Docker."
+        "Developed RESTful APIs for products, digital signatures, and payments.",
+        "Customize and integrate the system for each individual client."
       ]
     },
     {
-      name: "Healthcare Management System",
-      period: "2018 - 2019",
-      description: "A system for managing patient records, appointments, and billing with real-time notifications.",
-      technologies: ["Angular", "Node.js", "Express", "PostgreSQL", "Socket.io", "Azure"],
+      name: "PeopleX",
+      period: "04/2024 - 11/2024",
+      description: "A comprehensive digital ecosystem that transforms human resource management solutions, enhancing employee experience and organizational efficiency.",
+      Customer: "FPT and global partner",
+      technologies: [".NET Core 8.0", "SQL Server", "MongoDB", "Redis", "RabbitMQ", "AWS S3"],
       responsibilities: [
-        "Led a small team to deliver features iteratively.",
-        "Implemented real-time notifications using Socket.io.",
-        "Designed and implemented the database schema.",
-        "Integrated third-party APIs for insurance verification."
+        "Position: Back-end Developer",
+        "Develop, maintain in modules (Timesheet, HRM, Report, etc).",
       ]
     },
     {
-      name: "Personal Finance Tracker",
-      period: "2017",
-      description: "A mobile app to track expenses, budgets, and reports with data visualization.",
-      technologies: ["React Native", "Firebase", "Redux", "Chart.js"],
+      name: "3S Media",
+      period: "06/2023 - 01/2024",
+      description: "Manage records and revenue from various platforms for artists connected with 3S.",
+      Customer: "Artists, musicians",
+      technologies: [".NET Core 6.0", "PostgreSQL"],
       responsibilities: [
-        "Developed the application from concept to deployment.",
-        "Implemented charts and visualizations using Chart.js.",
-        "Designed a responsive UI for both iOS and Android.",
-        "Integrated Firebase for authentication and real-time database."
+        "Team size: 8",
+        "Position: Maintainer - Back-end Developer",
+        "Develop specific modules.",
+        "DevOps tasks.",
+        "Applied UnitOfWork, Repository, CQRS, and DDD."
+      ]
+    },
+    {
+      name: "EVN System Integration",
+      period: "01/2022 - 12/2023",
+      description: "Business website with 13 modules for EVN Ha Noi NPC and 30 Hanoi Electric Units.",
+      Customer: "EVN",
+      technologies: [".NET Core 5.0", "Oracle"],
+      responsibilities: [
+        "Team size: 50+",
+        "Position: Back-end Developer; Team Lead of 2 modules",
+        "Develop specific modules.",
+        "DevOps tasks.",
+        "Requirements analysis with customer.",
+        "Applied UnitOfWork, Repository, CQRS, and DDD."
+      ]
+    },
+    {
+      name: "WinEco Farm",
+      period: "03/2023 - 07/2023",
+      description: "Manage materials, employees, and reports for WinEco Farm.",
+      Customer: "Winmart",
+      technologies: [".NET Core 2.0", "MySQL"],
+      responsibilities: [
+        "Team size: 7",
+        "Position: Maintainer - Back-end Developer",
+        "Develop specific modules.",
+        "DevOps tasks.",
+        "Applied UnitOfWork, Repository, CQRS, and DDD."
       ]
     }
   ];

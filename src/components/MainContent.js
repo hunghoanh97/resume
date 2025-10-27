@@ -284,6 +284,16 @@ const MainContent = ({ profile, experiences, education, projects, skills }) => {
                     <Typography variant="body1" sx={{ mb: 3 }}>
                       {project.description}
                     </Typography>
+                    {project.Customer && (
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                        <Typography variant="subtitle2" sx={{ color: 'primary.main', fontWeight: 600 }}>
+                          Customer:
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                          {project.Customer}
+                        </Typography>
+                      </Box>
+                    )}
                     <Typography variant="subtitle2" sx={{ mb: 1, color: 'primary.main', fontWeight: 600 }}>
                       Technologies:
                     </Typography>
