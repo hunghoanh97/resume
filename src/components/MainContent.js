@@ -1,10 +1,9 @@
 import React from 'react';
-import { Box, Typography, Divider, Table, TableBody, TableCell, TableContainer, TableRow, Paper, Chip, Card, CardContent, Grid } from '@mui/material';
-import WorkIcon from '@mui/icons-material/Work';
-import SchoolIcon from '@mui/icons-material/School';
+import { Box, Typography, Chip, Card, CardContent, Grid } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import PersonIcon from '@mui/icons-material/Person';
 import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
+import WorkIcon from '@mui/icons-material/Work';
 
 const MainContent = ({ profile, experiences, education, projects, skills }) => {
   return (
@@ -281,6 +280,36 @@ const MainContent = ({ profile, experiences, education, projects, skills }) => {
                         }} 
                       />
                     </Box>
+                    {(project.teamSize || project.position) && (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+                        {project.teamSize && (
+                          <Chip 
+                            label={`Team: ${project.teamSize}`} 
+                            size="small" 
+                            sx={{
+                              bgcolor: 'background.paper',
+                              border: '1px solid',
+                              borderColor: index % 2 === 0 ? 'primary.light' : 'secondary.light',
+                              color: index % 2 === 0 ? 'primary.main' : 'secondary.main',
+                              fontWeight: 500
+                            }}
+                          />
+                        )}
+                        {project.position && (
+                          <Chip 
+                            label={`Role: ${project.position}`} 
+                            size="small" 
+                            sx={{
+                              bgcolor: 'background.paper',
+                              border: '1px solid',
+                              borderColor: index % 2 === 0 ? 'primary.light' : 'secondary.light',
+                              color: index % 2 === 0 ? 'primary.main' : 'secondary.main',
+                              fontWeight: 500
+                            }}
+                          />
+                        )}
+                      </Box>
+                    )}
                     <Typography variant="body1" sx={{ mb: 3 }}>
                       {project.description}
                     </Typography>

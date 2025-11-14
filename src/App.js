@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, CssBaseline, ThemeProvider, createTheme, Box } from '@mui/material';
+import { Container, CssBaseline, ThemeProvider, createTheme, Box } from '@mui/material';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import DownloadButton from './components/DownloadButton';
@@ -115,6 +115,8 @@ closely with stakeholders to deliver measurable outcomes.`,
       period: "04/2024 - 11/2024",
       description: "A comprehensive digital ecosystem that transforms human resource management solutions, enhancing employee experience and organizational efficiency.",
       Customer: "FPT and global partner",
+      teamSize: 200,
+      position: "Back-end Developer",
       technologies: [".NET Core 8.0", "SQL Server", "MongoDB", "Redis", "RabbitMQ", "AWS S3"],
       responsibilities: [
         "Position: Back-end Developer",
@@ -126,6 +128,8 @@ closely with stakeholders to deliver measurable outcomes.`,
       period: "06/2023 - 01/2024",
       description: "Manage records and revenue from various platforms for artists connected with 3S.",
       Customer: "Artists, musicians",
+      teamSize: 8,
+      position: "Maintainer - Back-end Developer",
       technologies: [".NET Core 6.0", "PostgreSQL"],
       responsibilities: [
         "Team size: 8",
@@ -140,6 +144,8 @@ closely with stakeholders to deliver measurable outcomes.`,
       period: "01/2022 - 12/2023",
       description: "Business website with 13 modules for EVN Ha Noi NPC and 30 Hanoi Electric Units.",
       Customer: "EVN",
+      teamSize: "50+",
+      position: "Back-end Developer; Team Lead of 2 modules",
       technologies: [".NET Core 5.0", "Oracle"],
       responsibilities: [
         "Team size: 50+",
@@ -155,6 +161,8 @@ closely with stakeholders to deliver measurable outcomes.`,
       period: "03/2023 - 07/2023",
       description: "Manage materials, employees, and reports for WinEco Farm.",
       Customer: "Winmart",
+      teamSize: 7,
+      position: "Maintainer - Back-end Developer",
       technologies: [".NET Core 2.0", "MySQL"],
       responsibilities: [
         "Team size: 7",

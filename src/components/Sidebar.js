@@ -7,14 +7,6 @@ import SchoolIcon from '@mui/icons-material/School';
 import ProfileCard from './ProfileCard';
 
 const Sidebar = ({ personalInfo, education }) => {
-  // Function to get initials from name
-  const getInitials = (name) => {
-    return name
-      .split(' ')
-      .map(word => word[0])
-      .join('')
-      .toUpperCase();
-  };
 
   return (
     <Box
